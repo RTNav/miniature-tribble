@@ -23,6 +23,8 @@ export default function App() {
     setMessages(prev => [...prev, { sender: 'bot', text: data.reply }]);
   };
 
+  console.log("Messages:", messages);
+  
   return (
     <div style={{ padding: '2rem', fontFamily: 'sans-serif', background: '#000', color: '#fff', minHeight: '100vh' }}>
       <h1 style={{ color: '#FFD700' }}>21 Copilots</h1>
