@@ -17,8 +17,11 @@ export default function App() {
       const response = await fetch('https://congenial-octo-system-g86a.onrender.com/chat', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ prompt: input, direct_lyrics: useDirectLyrics, tone })
-      });
+        body: JSON.stringify({
+          prompt: input,
+          direct_lyrics: useDirectLyrics,
+          tone: tone
+          });
       const data = await response.json();
       setMessages(prev => [...prev, { sender: 'bot', text: data.reply }]);
     } catch (err) {
